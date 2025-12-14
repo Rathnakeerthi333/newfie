@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fitwith_RK</title>
+    <style>
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #111;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff5722;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ff5722;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #111, #222);
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #ddd;
+}
+
+.hero .btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #ff5722;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.hero .btn:hover {
+  background: #e64a19;
+}
+
+/* Goals Section */
+.goals {
+  padding: 70px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.goals h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #111;
+}
+
+.goal-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #fafafa;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+  color: #ff5722;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.card .btn {
+  padding: 10px 20px;
+  background: #ff5722;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.card .btn:hover {
+  background: #e64a19;
+}
+
+/* Features Section */
+.features {
+  background: #f9f9f9;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+.feature {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.feature h3 {
+  color: #ff5722;
+  margin-bottom: 12px;
+}
+
+/* CTA Section */
+.cta {
+  background: #ff5722;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.cta h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.cta .btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.primary-btn {
+  background: #fff;
+  color: #ff5722;
+}
+
+.primary-btn:hover {
+  background: #f4f4f4;
+}
+
+.secondary-btn {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.secondary-btn:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Footer */
+.footer {
+  background: #111;
+  color: #ccc;
+  padding: 50px 20px;
+}
+
+.footer h2, 
+.footer h3 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer a {
+  color: #ff5722;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 14px;
+  color: #777;
+}
+.motiv {
+    background-color: #000;
+    color: #FFA500;
+    padding: 60px 20px;
+}
+
+.motiv-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.motiv-text {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 20px;
+}
+
+.motiv-text h2 {
+    color: #FFA500;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.motiv-text p {
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.motiv-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.motiv-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(255,165,0,0.5);
+}
+
+@media (max-width: 768px) {
+    .motiv-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .motiv-text {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+       <div class="logo">RK-Fitness</div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="assis.html">Assitance</a></li>
+    </ul>
+  </nav>
+  <div class="menu-toggle">☰</div>
+    </header>
+    <main>
+       <section id="home" class="hero">
+           <div class="hero-content">
+             <h1>Transform Your Body, Transform Your Life </h1>
+             <p>RK-Fitness helps you build muscle, burn fat, and track your journey.</p>
+             <a href="workout.html" class="btn">Get start</a>
+           </div>
+      </section>
+      <section id="goals" class="goals">
+  <h2>Choose Your Goal</h2>
+  <div class="goal-cards">
+    <div class="card">
+      <h3>Build Muscle</h3>
+      <p>Customized workout and diet plans to gain lean muscle mass.</p>
+    </div>
+
+    <div class="card">
+      <h3> Get Fit</h3>
+      <p>Burn fat, stay active, and improve your overall fitness.</p>
+    </div>
+
+    <div class="card">
+      <h3> Athlete Training</h3>
+      <p>High-intensity training designed for athletes and competitors.</p>
+    </div>
+  </div>
+</section>
+        <section id="features" class="features">
+  <h2>Our Features</h2>
+  <div class="feature-grid">
+
+    <div class="feature">
+      <h3> Diet Plans</h3>
+      <p>Personalized meal plans designed for your fitness goals.</p>
+    </div>
+
+    <div class="feature">
+      <h3> Workout Tracker</h3>
+      <p>Track your daily workouts and measure your progress.</p>
+    </div>
+
+    <div class="feature">
+      <h3> Progress Charts</h3>
+      <p>Visualize your fitness journey with interactive charts.</p>
+    </div>
+
+    <div class="feature">
+      <h3> Community</h3>
+      <p>Connect with like-minded people and stay motivated.</p>
+    </div>
+
+  </div>
+</section>
+  <section id="motiv" class="motiv">
+  <div class="motiv-container">
+    
+    <div class="motiv-text">
+      <h2>Train Like a Legend</h2>
+      <p>
+        Ronnie Coleman showed the world what dedication, strength, and discipline can achieve. 
+        His extreme methods were legendary—but they also teach us the importance of training 
+        scientifically, safely, and sustainably for lasting results.  
+      </p>
+    </div>
+    
+    <div class="motiv-image">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.6naVKo59okBBo-kIezDaNAHaD_?pid=Api&P=0&h=180" alt="Ronnie Coleman">
+    </div>
+
+  </div>
+</section>
+
+<section id="cta" class="cta">
+  <div class="cta-content">
+    <h2>Ready to Transform Your Fitness Journey?</h2>
+    <p>Join thousands of others who track workouts, set goals, and achieve results.</p>
+    <div class="cta-buttons">
+      <a href="join.html" class="btn primary-btn">Join Now</a>
+      <a href="learn.html" class="btn secondary-btn">Learn More</a>
+    </div>
+  </div>
+</section>
+    </main>
+        <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>FitTrack<span>Pro</span></h2>
+      <p>Your journey, your progress, your best self.</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-socials">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="rathnakeerthi_813"><i class="fab fa-instagram">instagram</i></a>
+        <a href="#"><i class="fab fa-youtube"></i>youtube</a>
+        <a href="https://www.linkedin.com/in/rathna-keerthi-rk-19579b333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin">linkedin</i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 FitTrackPro. All rights reserved.</p>
+  </div>
+</footer>
+    
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+    </script>
+</body>
+</html>

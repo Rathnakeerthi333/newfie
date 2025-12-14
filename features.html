@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RK Fitness - Features</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                  url("https://images.unsplash.com/photo-1579758629938-03607ccdbaba") no-repeat center/cover;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+.features {
+    padding: 80px 10%;
+    background: #f8f9fa;
+    text-align: center;
+  }
+
+  .features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #222;
+  }
+
+  .features .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: #555;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+
+  .feature-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .feature-card img {
+    width: 60px;
+    margin-bottom: 15px;
+  }
+
+  .feature-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: #ff6600;
+  }
+
+  .feature-card p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .mission {
+    padding: 80px 10%;
+    background: #fff;
+  }
+
+  .mission-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+
+  .mission-text {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .mission-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #222;
+  }
+
+  .mission-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 25px;
+  }
+
+  .mission-image {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .mission-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+  .cta {
+    padding: 100px 10%;
+    text-align: center;
+    color: white;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url("https://images.unsplash.com/photo-1593079831268-3381b0db4a77") no-repeat center/cover;
+  }
+
+  .cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+
+  .cta p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #f1f1f1;
+  }
+
+
+</style>
+    
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Why Choose RK Fitness?</h1>
+      <p>Discover the unique features that make your fitness journey simple, effective, and motivating. 
+         We bring you tools to track progress, stay consistent, and grow stronger every day.</p>
+    </div>
+  </section>
+   <section id="features" class="features">
+  <div class="features-container">
+    <h2>Our Key Features</h2>
+    <p class="subtitle">Simple, powerful tools to help you stay fit and consistent.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <img src="https://img.icons8.com/ios-filled/100/dumbbell.png" alt="Workout Plans">
+        <h3>Personalized Plans</h3>
+        <p>Workouts designed for your fitness goals, whether strength, weight loss, or endurance.</p>
+      </div>
+
+      <div class="feature-card">
+        <img src="https://img.icons8.com/ios-filled/100/combo-chart.png" alt="Progress Tracking">
+        <h3>Progress Tracking</h3>
+        <p>Track your growth with charts and stats that keep you motivated every day.</p>
+      </div>
+
+      <div class="feature-card">
+        <img src="https://img.icons8.com/ios-filled/100/meal.png" alt="Nutrition">
+        <h3>Nutrition Guidance</h3>
+        <p>Basic diet suggestions to fuel your workouts and achieve faster results.</p>
+      </div>
+
+      <div class="feature-card">
+        <img src="https://img.icons8.com/ios-filled/100/motivation.png" alt="Consistency">
+        <h3>Stay Consistent</h3>
+        <p>Friendly reminders and tips to help you stay on track with your fitness journey.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mission">
+  <div class="mission-container">
+    <div class="mission-text">
+      <h2>Our Mission</h2>
+      <p>
+        RK Fitness was started in <strong>2024</strong> with a simple vision – 
+        to make fitness accessible and enjoyable for everyone. 
+        No trainers, no complicated routines – just the right tools 
+        to help you stay consistent and achieve your goals.
+      </p>
+     
+    </div>
+
+    <div class="mission-image">
+      <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1" alt="Fitness Motivation">
+    </div>
+  </div>
+</section>
+<section class="cta">
+  <div class="cta-content">
+    <h2>Start Your Fitness Journey Today</h2>
+    <p>
+      Don’t wait for the perfect moment – take the first step with RK Fitness. 
+      Build consistency, track progress, and achieve your fitness goals with us.
+    </p>
+  </div>
+</section>
+
+</body>
+</html>

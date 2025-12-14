@@ -1,0 +1,228 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Now - RK Fitness</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    p {
+      text-align: center;
+      color: #555;
+    }
+    form {
+      max-width: 400px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #333;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #218838;
+    }
+    .contact-info {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .contact-info p {
+      margin: 5px 0;
+    }
+    
+  </style>
+</head>
+<body>
+  <h2>Join RK Fitness</h2>
+  <p>Fill out the form below to become a member</p>
+
+  <form>
+    <label>Your Name:</label>
+    <input type="text" name="name" required>
+
+    <label>Your Email:</label>
+    <input type="email" name="email" required>
+
+    <label>Your Phone:</label>
+    <input type="tel" name="phone" required>
+
+    <label>Membership Plan:</label>
+    <select name="plan" required>
+      <option value="">-- Select Plan --</option>
+       <option value="trial">Free Trial (7 Days)</option>
+      <option value="monthly">Monthly</option>
+      <option value="quarterly">Quarterly</option>
+      <option value="yearly">Yearly</option>
+    </select>
+
+    <label>Fitness Type:</label>
+    <select name="fitness_type" required>
+      <option value="">-- Select Fitness Type --</option>
+      <option value="bodybuilding">Bodybuilding</option>
+      <option value="athlete">Athlete Training</option>
+      <option value="weightloss">Weight Loss</option>
+      <option value="strength">Strength Training</option>
+      <option value="yoga">Yoga</option>
+      <option value="general">General Fitness</option>
+    </select>
+
+    <button type="submit">Join Now</button>
+  </form>
+
+  <div class="contact-info">
+    <h3>Need Help?</h3>
+    <p>Email: rkfitness@gmail.com</p>
+    <p>Phone: +91 8660623655</p>
+  </div>
+  <script>
+    function saveUser(e){
+  e.preventDefault();
+  let id = document.getElementById("userId").value.trim();
+  let type = document.getElementById("fitnessType").value;
+  if(!id || !type) return alert("Fill all fields!");
+
+  let user = { id: id, fitnessType: type };
+  localStorage.setItem("rk_user", JSON.stringify(user));
+  alert("User saved!");
+  window.location.href = "getstart.html";
+}
+  </script>
+  
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join RK Fitness</title>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("YOUR_PUBLIC_KEY");
+  })();
+</script>
+
+<style>
+body {
+  font-family: Arial;
+  background: #f4f4f4;
+  padding: 20px;
+}
+form {
+  max-width: 400px;
+  background: white;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+button {
+  background: green;
+  color: white;
+  border: none;
+  font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+
+<h2 align="center">Join RK Fitness</h2>
+
+<form onsubmit="sendData(event)">
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="email" id="email" placeholder="Your Email" required>
+  <input type="tel" id="phone" placeholder="Phone" required>
+
+  <select id="plan" required>
+    <option value="">Select Plan</option>
+    <option value="Trial">Free Trial</option>
+    <option value="Monthly">Monthly</option>
+    <option value="Quarterly">Quarterly</option>
+    <option value="Yearly">Yearly</option>
+  </select>
+
+  <select id="fitnessType" required>
+    <option value="">Fitness Type</option>
+    <option value="Bodybuilding">Bodybuilding</option>
+    <option value="Weight Loss">Weight Loss</option>
+    <option value="Strength">Strength</option>
+    <option value="Yoga">Yoga</option>
+  </select>
+
+  <button type="submit">Join Now</button>
+</form>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("JMjMNF8F3bKvrDeCf"); // Replace with your actual public key
+</script>
+<script>
+function sendData(e) {
+  e.preventDefault();
+
+  const params = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    plan: document.getElementById("plan").value,
+    fitnessType: document.getElementById("fitnessType").value
+  };
+
+  emailjs.send(
+    "service_60o1nss",
+    "template_7cm8k5u",
+    params
+  ).then(() => {
+    alert("Details sent successfully ✅");
+    window.location.href = "getstart.html";
+  }, (error) => {
+    alert("Failed to send ❌");
+    console.log(error);
+  });
+}
+</script>
+
+</body>
+</html>
+
+

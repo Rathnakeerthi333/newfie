@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   .calculators {
+  padding: 50px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.calculator {
+  background: #111;
+  color: #fff;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+.calculator input, .calculator select, .calculator button {
+  margin: 10px 5px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.calculator button {
+  background: #FF4500;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.calculator button:hover {
+  background: #FFA500;
+  color: #000;
+}
+.safe-text {
+    color: #FFA500;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+
+.footer {
+  background: #111;
+  color: #ccc;
+  padding: 50px 20px;
+}
+
+.footer h2, 
+.footer h3 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer a {
+  color: #ff5722;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 14px;
+  color: #777;
+}
+.fitness-assist-hero {
+    background: linear-gradient(135deg, #FF4500, #FFA500); 
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px; 
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+.fitness-assist-hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.fitness-assist-hero p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .fitness-assist-hero h1 {
+        font-size: 2rem;
+    }
+    .fitness-assist-hero p {
+        font-size: 1rem;
+    }
+}
+    </style>
+</head>
+<body>
+  <section class="fitness-assist-hero">
+  <h1>Scientific Fitness Dashboard</h1>
+  <p>Calculate BMI, BMR, TDEE, Body Fat %, Waist-to-Height Ratio, and more.</p>
+  </section>
+
+<section class="calculators">
+  <h2>Health Calculators</h2>
+
+  <div class="calculator">
+    <h3>BMI Calculator</h3>
+    <input type="number" id="bmi-weight" placeholder="Weight (kg)">
+    <input type="number" id="bmi-height" placeholder="Height (cm)">
+    <button onclick="calculateBMI()">Calculate BMI</button>
+    <p id="bmi-result"></p>
+  </div>
+  <p id="bmi-result"></p>
+<p id="bmi-safe" class="safe-text"></p>
+
+  <div class="calculator">
+    <h3>BMR Calculator</h3>
+    <input type="number" id="bmr-age" placeholder="Age">
+    <input type="number" id="bmr-weight" placeholder="Weight (kg)">
+    <input type="number" id="bmr-height" placeholder="Height (cm)">
+    <select id="bmr-gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <select id="bmr-activity">
+      <option value="1.2">Sedentary</option>
+      <option value="1.375">Lightly active</option>
+      <option value="1.55">Moderately active</option>
+      <option value="1.725">Very active</option>
+      <option value="1.9">Extra active</option>
+    </select>
+    <button onclick="calculateBMR()">Calculate BMR & TDEE</button>
+    <p id="bmr-result"></p>
+  </div>
+  <p id="bmr-result"></p>
+<p id="bmr-safe" class="safe-text"></p>
+
+  <div class="calculator">
+    <h3>Body Fat % (US Navy)</h3>
+    <input type="number" id="bf-waist" placeholder="Waist (cm)">
+    <input type="number" id="bf-neck" placeholder="Neck (cm)">
+    <input type="number" id="bf-height" placeholder="Height (cm)">
+    <select id="bf-gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <button onclick="calculateBodyFat()">Calculate Body Fat %</button>
+    <p id="bf-result"></p>
+  </div>
+   <p id="bf-result"></p>
+<p id="bf-safe" class="safe-text"></p>
+
+  <div class="calculator">
+    <h3>Waist-to-Height Ratio</h3>
+    <input type="number" id="whr-waist" placeholder="Waist (cm)">
+    <input type="number" id="whr-height" placeholder="Height (cm)">
+    <button onclick="calculateWHR()">Calculate WHR</button>
+    <p id="whr-result"></p>
+  </div>
+  <p id="whr-result"></p>
+<p id="whr-safe" class="safe-text"></p>
+</section>
+ <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>FitTrack<span>Pro</span></h2>
+      <p>Your journey, your progress, your best self.</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-socials">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="rathnakeerthi_813"><i class="fab fa-instagram">instagram</i></a>
+        <a href="#"><i class="fab fa-youtube"></i>youtube</a>
+        <a href="https://www.linkedin.com/in/rathna-keerthi-rk-19579b333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin">linkedin</i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 FitTrackPro. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+   function calculateBMI() {
+  let weight = parseFloat(document.getElementById('bmi-weight').value);
+  let height = parseFloat(document.getElementById('bmi-height').value) / 100;
+  if(weight && height){
+    let bmi = weight / (height * height);
+    document.getElementById('bmi-result').innerText = "Your BMI: " + bmi.toFixed(2);
+    
+    let safeText = "";
+    if(bmi < 18.5) safeText = "Underweight (below 18.5)";
+    else if(bmi >= 18.5 && bmi < 24.9) safeText = "Normal weight (18.5 - 24.9)";
+    else if(bmi >= 25 && bmi < 29.9) safeText = "Overweight (25 - 29.9)";
+    else safeText = "Obese (30+)";
+    
+    document.getElementById('bmi-safe').innerText = "Safe range: " + safeText;
+  } else {
+    alert("Please enter weight and height.");
+  }
+}
+
+
+function calculateBMR() {
+  let age = parseFloat(document.getElementById('bmr-age').value);
+  let weight = parseFloat(document.getElementById('bmr-weight').value);
+  let height = parseFloat(document.getElementById('bmr-height').value);
+  let gender = document.getElementById('bmr-gender').value;
+  let activity = parseFloat(document.getElementById('bmr-activity').value);
+
+  if(age && weight && height){
+    let bmr;
+    if(gender === "male"){
+      bmr = 88.36 + (13.4 * weight) + (4.8 * height) - (5.7 * age);
+    } else {
+      bmr = 447.6 + (9.2 * weight) + (3.1 * height) - (4.3 * age);
+    }
+    let tdee = bmr * activity;
+    document.getElementById('bmr-result').innerText = `BMR: ${bmr.toFixed(2)} kcal, TDEE: ${tdee.toFixed(2)} kcal`;
+    
+    document.getElementById('bmr-safe').innerText = "Typical BMR: Men 1500-1800 kcal, Women 1200-1500 kcal (varies with age & activity)";
+  } else {
+    alert("Please fill all fields.");
+  }
+}
+
+
+function calculateBodyFat() {
+  let waist = parseFloat(document.getElementById('bf-waist').value);
+  let neck = parseFloat(document.getElementById('bf-neck').value);
+  let height = parseFloat(document.getElementById('bf-height').value);
+  let gender = document.getElementById('bf-gender').value;
+
+  if(waist && neck && height){
+    let bodyFat;
+    if(gender === "male"){
+      bodyFat = 495 / (1.0324 - 0.19077 * Math.log10(waist - neck) + 0.15456 * Math.log10(height)) - 450;
+      document.getElementById('bf-safe').innerText = "Healthy range: 10-20%";
+    } else {
+      let hip = waist; 
+      bodyFat = 495 / (1.29579 - 0.35004 * Math.log10(waist + hip - neck) + 0.22100 * Math.log10(height)) - 450;
+      document.getElementById('bf-safe').innerText = "Healthy range: 18-28%";
+    }
+    document.getElementById('bf-result').innerText = "Body Fat %: " + bodyFat.toFixed(2) + "%";
+  } else {
+    alert("Please fill all fields.");
+  }
+}
+
+function calculateWHR() {
+  let waist = parseFloat(document.getElementById('whr-waist').value);
+  let height = parseFloat(document.getElementById('whr-height').value);
+
+  if(waist && height){
+    let ratio = waist / height;
+    document.getElementById('whr-result').innerText = "Waist-to-Height Ratio: " + ratio.toFixed(2);
+    
+    let safeText = (ratio < 0.5) ? "Healthy (<0.5)" : "Above recommended (>0.5)";
+    document.getElementById('whr-safe').innerText = "Safe range: " + safeText;
+  } else {
+    alert("Please fill all fields.");
+  }
+}
+let userData = {
+  name: "RK",
+  goal: "bodybuilding",     
+  bmi: calculatedBMI,
+  bmr: calculatedBMR,
+  tdee: calculatedTDEE,
+  bodyFat: calculatedFat
+};
+
+localStorage.setItem("fitnessData", JSON.stringify(userData));
+</script>
+</body>
+</html>

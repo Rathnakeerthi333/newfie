@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About page</title>
+    <style>
+      .hero {
+  height: 50vh;
+  background: url('https://images.unsplash.com/photo-1599058917212-d750089bc07a') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #fff;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.hero-content h1 span {
+  color: #ff4500; 
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+our-story {
+  padding: 80px 10%;
+  background: #f9f9f9;
+}
+
+.story-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.story-text {
+  flex: 1;
+}
+
+.story-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #222;
+  position: relative;
+}
+
+.story-text h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #ff4500;
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+.story-text p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.story-text span {
+  color: #ff4500;
+  font-weight: bold;
+}
+
+.story-image {
+  flex: 1;
+  text-align: center;
+}
+
+.story-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.mission-vision {
+  padding: 70px 10%;
+  background: #f9f9f9;
+}
+
+.mv-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.mv-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.mv-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.mv-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #ff4500;
+}
+
+.mv-card p {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.6;
+}
+.timeline {
+  padding: 80px 10%;
+  background: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.timeline h2 {
+  font-size: 2.3rem;
+  margin-bottom: 50px;
+  color: #222;
+  font-weight: bold;
+  position: relative;
+}
+
+.timeline h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #ff4500;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: #ff4500;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  padding: 20px 40px;
+  position: relative;
+  width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-item .year {
+  display: inline-block;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background: #ff4500;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.timeline-item p {
+  background: #f9f9f9;
+  padding: 15px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  max-width: 300px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+@media (max-width: 768px) {
+  .timeline-container::before {
+    left: 20px; 
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 50px;
+    text-align: left !important;
+  }
+
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+
+  .timeline-item p {
+    max-width: 100%;
+  }
+}
+.motivation {
+  height: 50vh;
+  background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b') no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.motivation-overlay {
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  text-align: center;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.motivation h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.footer-bottom {
+  margin-top: 2rem;
+  border-top: 1px solid #222;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #777;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+</style>
+
+</style>
+    </style>
+    
+</head>
+<body>
+   <section class="hero">
+  <div class="overlay">
+    <div class="hero-content">
+      <h1>About <span>RK Fitness</span></h1>
+      <p>We believe in transforming fitness into a lifestyle.  
+         Your journey to strength, health, and confidence starts here.</p>
+    </div>
+  </div>
+</section>
+<section class="our-story">
+  <div class="story-container">
+    <div class="story-text">
+      <h2>Our Story</h2>
+      <p>
+        At <span>RK Fitness</span>, we believe fitness is more than just working out – 
+        it’s about building a lifestyle of strength, confidence, and health.  
+      </p>
+      <p>
+        Started in 2024 with a passion for fitness, we’ve helped hundreds of people 
+        transform their lives through customized workout plans, modern equipment, 
+        and expert trainers.
+      </p>
+      <p>
+        Our mission is simple: <strong>to make fitness accessible, motivating, 
+        and sustainable for everyone.</strong>
+      </p>
+    </div>
+    <div class="story-image">
+      <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1" alt="Our Gym">
+    </div>
+  </div>
+</section>
+<section class="mission-vision">
+  <div class="mv-container">
+    <div class="mv-card">
+      <h2>Our Mission</h2>
+      <p>
+        To help people start their fitness journey with confidence, 
+        discipline, and motivation — no matter their level or background.
+      </p>
+    </div>
+    <div class="mv-card">
+      <h2>Our Vision</h2>
+      <p>
+        To build a supportive fitness community and become a trusted 
+        platform for health and lifestyle transformation.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="timeline">
+  <h2>Our Journey & Future Goals</h2>
+  <div class="timeline-container">
+    <div class="timeline-item">
+      <span class="year">2024</span>
+      <p>RK Fitness was founded with the dream of making fitness simple and motivating for everyone. 
+         Started by sharing workout ideas, fitness knowledge, and building our online presence.</p>
+    </div>
+    <div class="timeline-item">
+      <span class="year">2025</span>
+      <p>Expanding into structured workout plans, fitness challenges, and building a strong online community.</p>
+    </div>
+    <div class="timeline-item">
+      <span class="year">Future</span>
+      <p>Our vision is to become a trusted fitness platform with expert guidance, nutrition support, 
+         and a supportive fitness community.</p>
+    </div>
+  </div>
+</section>
+<section class="last">
+   <div class="motivation-overlay">
+    <h2>"Your Fitness Journey Starts Today, Not Tomorrow."</h2>
+  </div>
+
+</section>
+  <div class="footer-bottom">
+    <p>© 2025 FitTrackPro. All rights reserved.</p>
+  </div>
+    <script src="js.js">
+    </script>
+</body>
+</html>

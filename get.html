@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started - RK Fitness</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f4f8;
+        }
+
+        .container {
+            background: #fff;
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+
+        .container h1 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #333;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .input-group input:focus {
+            border-color: #0077b6;
+            outline: none;
+        }
+
+        .show-password {
+            font-size: 12px;
+            margin-top: 5px;
+            cursor: pointer;
+            color: #0077b6;
+        }
+
+        .forgot {
+            text-align: right;
+            font-size: 12px;
+            margin-bottom: 20px;
+            color: #0077b6;
+            cursor: pointer;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #0077b6;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #005f87;
+        }
+
+        .or {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .btn-browser {
+            width: 100%;
+            padding: 12px;
+            background: #e9f1f7;
+            color: #0077b6;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-browser:hover {
+            background: #d0e4f0;
+        }
+
+        .signup {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .signup a {
+            color: #0077b6;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .signup a:hover {
+            text-decoration: underline;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Get Started with RK Fitness</h1>
+
+        <div class="input-group">
+            <label for="email">Email or Phone</label>
+            <input type="text" id="email" placeholder="Enter email or phone">
+        </div>
+
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="••••••••">
+            <div class="show-password" onclick="togglePassword()">Show</div>
+        </div>
+
+        <div class="forgot">Forgot password?</div>
+
+        <button class="btn">Sign In</button>
+
+        <div class="or">or</div>
+
+        <button class="btn-browser">Sign in with browser</button>
+
+        <div class="signup">
+            New to RK Fitness? <a href="join.html">Join now</a>
+        </div>
+    </div>
+      
+    <script>
+        function togglePassword() {
+            const pass = document.getElementById('password');
+            if(pass.type === "password"){
+                pass.type = "text";
+            } else {
+                pass.type = "password";
+            }
+        }
+    </script>
+
+</body>
+</html>
